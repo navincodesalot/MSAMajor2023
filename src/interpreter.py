@@ -6,11 +6,15 @@ def main():
             print("Error: Invalid Format")
             continue
 
-        x = int(cool[0])
         y = cool[1]
-        z = int(cool[2])
+        try:
+            x = int(cool[0])
+            z = int(cool[2])
+        except ValueError:
+            print("X and Z must be integers")
+            continue
 
-        if z not in ["+", "-", "*", "/"]:
+        if y not in ["+", "-", "*", "/"]:
             print("Invalid Operator")
             continue
         
