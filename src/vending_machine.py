@@ -9,7 +9,7 @@ def main():
             if inserted_coins not in accepted_coins:
                 continue
             else:
-                amount = amount - inserted_coins
+                amount -= inserted_coins
             if amount <= 0:
                 print(f"Change owed: {abs(amount)}")
                 break
