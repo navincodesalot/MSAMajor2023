@@ -11,6 +11,6 @@ def main():
             else:
                 amount -= inserted_coins
         except ValueError:
-            continue;
+            continue
     print(f"Change owed: {abs(amount)}")
 main()
