@@ -1,9 +1,9 @@
 {
-    "workbench.colorTheme": "Bearded Theme Coffee",
+    "workbench.colorTheme": "Bearded Theme Coffee Reversed",
     "window.zoomLevel": 2.2,
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "'Cascadia Code'",
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "bearded-icons",
     "explorer.confirmDragAndDrop": false
 }
