@@ -15,9 +15,9 @@ def main():
 
     while True:
         try:
-            questions = int(input("Enter number of questions to ask (1-10): "))
-            if questions < 1 or questions > 10:
-                print("Please enter an integer value between 1 and 10!")
+            questions = int(input("Enter number of questions to ask (3 - 10): "))
+            if questions < 3 or questions > 10:
+                print("Please enter an integer value between 3 and 10!")
                 continue
             else:
                 break
