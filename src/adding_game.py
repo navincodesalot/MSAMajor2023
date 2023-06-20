@@ -1,5 +1,29 @@
 import random
 
+def prompt_solve(level, questions):
+    if level == 1:
+        return gen_questions(questions, 0, 9)
+    elif level == 2:
+        return gen_questions(questions, 10, 99)
+    elif level == 3:
+        return gen_questions(questions, 100, 999)
+        
+def gen_questions(questions, min, max):
+    correct = 0
+    for i in range(questions):
+            x = random.randint(min, max)
+            y = random.randint(min, max)
+            try:
+                answer = int(input(f"{x} + {y} = "))
+                if answer == x + y:
+                    print("CORRECT!!!")
+                    correct += 1
+                else:
+                    print("WRONG!!!")
+            except ValueError:
+                print("WRONG!!!")
+    return correct
+
 def main():
     while True:
         try:
@@ -25,51 +49,9 @@ def main():
             print("Invalid Input!")
             continue
 
-    correct = 0
-    score = 0
-    x = 0
-    y = 0
-
-    if level == 1:
-        for i in range(questions):
-            x = random.randint(0, 9)
-            y = random.randint(0, 9)
-            try:
-                answer = int(input(f"{x} + {y} = "))
-                if answer == x + y:
-                    print("CORRECT!!!")
-                    correct += 1
-                else:
-                    print("WRONG!!!")
-            except ValueError:
-                print("WRONG!!!")
-    elif level == 2:
-        for i in range(questions):
-            x = random.randint(10, 99)
-            y = random.randint(10, 99)
-            try:
-                answer = int(input(f"{x} + {y} = "))
-                if answer == x + y:
-                    print("CORRECT!!!")
-                    correct += 1
-                else:
-                    print("WRONG!!!")
-            except ValueError:
-                print("WRONG!!!")
-    elif level == 3:
-        for i in range(questions):
-            x = random.randint(100, 999)
-            y = random.randint(100, 999)
-            try:
-                answer = int(input(f"{x} + {y} = "))
-                if answer == x + y:
-                    print("CORRECT!!!")
-                    correct += 1
-                else:
-                    print("WRONG!!!")
-            except ValueError:
-                print("WRONG!!!")
+    correct = prompt_solve(level, questions)
                 
     score = correct / questions * 100
     print(f"You got {correct} out of {questions} correct: {score:.2f}%")
+
 main()
