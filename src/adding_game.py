@@ -10,7 +10,7 @@ def prompt_solve(level, questions):
         
 def gen_questions(questions, min, max):
     correct = 0
-    for i in range(questions):
+    for _ in range(questions):
             x = random.randint(min, max)
             y = random.randint(min, max)
             try:
