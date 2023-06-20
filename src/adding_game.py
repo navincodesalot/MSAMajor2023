@@ -10,18 +10,28 @@ def prompt_solve(level, questions):
         
 def gen_questions(questions, min, max):
     correct = 0
+    attempts = 3
     for _ in range(questions):
             x = random.randint(min, max)
             y = random.randint(min, max)
-            try:
-                answer = int(input(f"{x} + {y} = "))
-                if answer == x + y:
-                    print("CORRECT!!!")
-                    correct += 1
-                else:
+            while True:
+                try:
+                    answer = int(input(f"{x} + {y} = "))
+                    if answer == x + y:
+                        print("CORRECT!!!")
+                        correct += 1
+                        break
+                    else:
+                        raise(ValueError)
+                except ValueError:
                     print("WRONG!!!")
-            except ValueError:
-                print("WRONG!!!")
+                    attempts -= 1
+                    if attempts == 0:
+                        print(f"Correct Answer: {x} + {y} = {x + y}")
+                        attempts = 3
+                        break
+                    else:
+                        continue
     return correct
 
 def main():
@@ -39,7 +49,7 @@ def main():
 
     while True:
         try:
-            questions = int(input("Enter number of questions to ask (3 - 10): "))
+            questions = int(input("Enter number of questions to ask (3 to 10): "))
             if questions < 3 or questions > 10:
                 print("Please enter an integer value between 3 and 10!")
                 continue
