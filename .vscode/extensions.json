@@ -7,6 +7,7 @@
         "beardedbear.beardedtheme",
         "beardedbear.beardedicons",
         "github.copilot",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "yy0931.vscode-sqlite3-editor"
     ]
 }
