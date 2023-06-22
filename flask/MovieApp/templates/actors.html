@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Actors {% endblock %}</h1>
+    <br>
+    {% for actor in actors_data %}
+        <div class='actors'>
+            <h1>{{ actor['name'] }}</h1>
+            <h3>Movie — {{ actor['title'] }}</h3>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}
