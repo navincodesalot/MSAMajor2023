@@ -28,7 +28,7 @@
             <p><b>{{ movie['year'] }} · {{ movie['rating'] }}</b></p> 
             <p>Genres: {{ movie['genres'] }}</p>
             <p>Runtime: {{ movie['runtime'] }}</p>
-            <p>Rating: <b>{{ movie['imdb_score'] }}/10</b></p>
+            <p>IMDB Rating: <b>{{ movie['imdb_score'] }}/10</b></p>
             <hr>
             <form action="{{ url_for('delete', id=movie['id']) }}" method="POST">
                 <input type="submit" value="Delete Movie"
