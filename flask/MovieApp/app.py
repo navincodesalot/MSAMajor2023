@@ -47,7 +47,7 @@ def index():
 @app.route('/actors')
 def actors():
     conn = get_db_connection()
-    actors_data = conn.execute('SELECT actors.name, movies.title FROM actors, movies WHERE actors.movie_id = movies.id;').fetchall()
+    actors_data = conn.execute('SELECT actors.name, movies.title FROM actors, movies WHERE actors.movie_id = movies.id').fetchall()
     conn.close()
     return render_template('actors.html', actors_data=actors_data)
 
