@@ -49,7 +49,7 @@ def actors():
     conn = get_db_connection()
     actors_data = conn.execute('SELECT actors.name, movies.title FROM actors, movies WHERE actors.movie_id = movies.id;').fetchall()
     conn.close()
-    return render_template('actors.html', actors=actors, actors_data=actors_data)
+    return render_template('actors.html', actors_data=actors_data)
 
 @app.route('/<int:id>/delete/', methods=('POST',))
 def delete(id):
