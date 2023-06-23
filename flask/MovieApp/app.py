@@ -51,6 +51,13 @@ def actors():
     conn.close()
     return render_template('actors.html', actors_data=actors_data)
 
+@app.route('/director/<name>/')
+def director(name):
+    conn = get_db_connection()
+    dir_data = conn.execute('SELECT title, year, director FROM movies WHERE director = ?', (name,)).fetchall()
+    conn.close()
+    return render_template('director.html', dir_data=dir_data, name=name)
+
 @app.route('/<int:id>/delete/', methods=('POST',))
 def delete(id):
     movie = get_movie(id)

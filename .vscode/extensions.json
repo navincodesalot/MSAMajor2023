@@ -8,6 +8,7 @@
         "beardedbear.beardedicons",
         "github.copilot",
         "eamodio.gitlens",
-        "yy0931.vscode-sqlite3-editor"
+        "yy0931.vscode-sqlite3-editor",
+        "wholroyd.jinja"
     ]
 }

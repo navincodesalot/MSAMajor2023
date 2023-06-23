@@ -24,7 +24,7 @@
     {% for movie in movies %}
         <div class='movie'>
             <h1>{{ movie['title'] }}</h1>
-            <h3>Director — {{ movie['director'] }}</h3>
+            <h3><a href="{{ url_for('director', name=movie['director']) }}">Director — {{ movie['director'] }}</a></h3>
             <p><b>{{ movie['year'] }} · {{ movie['rating'] }}</b></p> 
             <p>Genres: {{ movie['genres'] }}</p>
             <p>Runtime: {{ movie['runtime'] }}</p>
