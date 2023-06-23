@@ -27,7 +27,7 @@
             <h3><a href="{{ url_for('director', name=movie['director']) }}">Director — {{ movie['director'] }}</a></h3>
             <p><b>{{ movie['year'] }} · {{ movie['rating'] }}</b></p> 
             <p>Genres: {{ movie['genres'] }}</p>
-            <p>Runtime: {{ movie['runtime'] }}</p>
+            <p>Runtime: {{ movie['runtime'] }} minutes</p>
             <p>IMDB Rating: <b>{{ movie['imdb_score'] }}/10</b></p>
             <hr>
             <form action="{{ url_for('delete', id=movie['id']) }}" method="POST">
