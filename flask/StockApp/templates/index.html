@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} StockApp {% endblock %}</h1>
+    <br>
+    <div>
+        <form action="{{ url_for('index')}}" method="POST"> 
+            <div>
+                <label for="symbol">Choose Symbol: <label>
+                <select name="symbol" id="symbol" required>
+                    {% for stock in sdata %}
+                        <option value="{{ stock[0] }}">{{ stock }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="chart">Choose Chart Type: <label>
+                <select name="chart" id="chart" required>
+                        <option value="bar">Bar</option>
+                        <option value="line">Line</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="time">Choose Time Series: <label>
+                <select name="time" id="time" required>
+                        <option value="intraday">Intraday</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="start_date">Start Date: </label>
+                <input type="date" id="start_date" name="start_date" required>
+            </div>
+            <br>
+
+            <div>
+                <div>
+                    <label for="end_date">End Date: </label>
+                    <input type="date" id="end_date" name="end_date" required>
+                </div>
+            </div>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
