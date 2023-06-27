@@ -49,6 +49,14 @@
             </div>
             <br>
             <input type="submit">
+            <br>
+
+            {% if chart %}
+            <h1>hi</h1>
+                <div id="chart">
+                    <embed type="image/svg+xml" src= {{ chart|safe }} />
+                </div>
+            {% endif %}
         </form>
     </div>
 {% endblock %}
